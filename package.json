@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Proyecto con SASS Y NPM",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp dev"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/TavoLopez0305/Festival-de-musica/issues"
   },
-  "homepage": "https://github.com/TavoLopez0305/Festival-de-musica#readme"
+  "homepage": "https://github.com/TavoLopez0305/Festival-de-musica#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.8"
+  }
 }
