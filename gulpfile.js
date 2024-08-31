@@ -12,7 +12,7 @@ const sass =  gulpSass(dartSass)
 
 export function css (done){
     src('src/scss/app.scss')
-        .pipe(sass())//para dar control de la ejecucion de las funcion
+        .pipe(sass().on('error',sass.logError))//para dar control de la ejecucion de las funcion
         .pipe(dest('build/css'))
     done ()
 }
@@ -20,5 +20,5 @@ export function css (done){
 //funcion watch para que la ejecucion se mantenga
 
 export const dev = () =>{
-    watch('src/scss/app.scss', css)
+    watch('src/scss/**/*.scss', css) // se le asigna busquedas globales en formato .scss
 }

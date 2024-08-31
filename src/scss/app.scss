@@ -1,4 +1,7 @@
+@use 'base/variables' as v;
+//se le asigna la letra v ya que es variables
+
 body{
-    background-color: black;
-    color: white;
+    font-family: v.$main_found;
+    background-color: v.$red;
 }
