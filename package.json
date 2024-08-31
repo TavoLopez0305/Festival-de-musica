@@ -1,0 +1,24 @@
+{
+  "name": "perreo_fest",
+  "version": "1.0.0",
+  "description": "Proyecto con SASS Y NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TavoLopez0305/Festival-de-musica.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "author": "Gustavo Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TavoLopez0305/Festival-de-musica/issues"
+  },
+  "homepage": "https://github.com/TavoLopez0305/Festival-de-musica#readme"
+}
