@@ -1,7 +1,3 @@
-@use 'base/variables' as v;
-//se le asigna la letra v ya que es variables
-
-body{
-    font-family: v.$main_found;
-    background-color: v.$red;
-}
+@forward 'base';
+// direccionamos y extraermos los archivos de la carpeta layout
+@forward 'layout';
