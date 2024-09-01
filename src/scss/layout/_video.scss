@@ -1,0 +1,46 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.video{
+    position: relative; //el contenedor padre
+    min-height: 50rem;
+    max-height: 70rem;
+    overflow: hidden;
+    .overlay{
+        position: absolute; //contenedor hijo
+        background: linear-gradient(
+            270deg,
+            rgba(v.$morado, 60%)
+            rgba( darken(v.$morado, 20%) , 90%)
+        );
+        //agregamos hacia que grados ira inclinado el desvanecimiento
+        //los colores del desvanecido y en que porcentaje
+        //darken para hacer un poco mas obscuro el color y en que porcentaje
+        inset: 0;
+        display: flex;
+        align-items: center;
+    }
+    video{
+        display: block;
+        width: auto;
+        @include m.desktop{
+            width: 100%;
+        }
+    }
+
+}
+.contenido-video{
+    z-index: 10;//reorganiza el orden de los bloques
+    h2{
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+    p{
+        background-color: v.$rosa;
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin-block-end: 2rem;
+        color: v.$blanco;
+    }
+}
