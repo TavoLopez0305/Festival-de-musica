@@ -1,7 +1,7 @@
 @use 'variables' as v;
 
 @mixin telefono{
-    @media (min-width: v.$telefono) {
+    @media (max-width: v.$telefono) {
         @content;
     }
 }
@@ -19,4 +19,9 @@
     @media (min-width: v.$desktopXL) {
         @content;
     }
+}
+@mixin contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
 }
