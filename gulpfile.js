@@ -11,9 +11,9 @@ import {src, dest, watch} from 'gulp'
 const sass =  gulpSass(dartSass)
 
 export function css (done){
-    src('src/scss/app.scss')
+    src('src/scss/app.scss', {sourcemaps:true})
         .pipe(sass())//para dar control de la ejecucion de las funcion
-        .pipe(dest('build/css'))
+        .pipe(dest('build/css',{sourcemaps:true}))
     done ()
 }
 
