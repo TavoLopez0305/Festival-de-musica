@@ -31,3 +31,15 @@
     grid-template-columns: repeat($columnas, 1fr);
     gap: $gap;
 }
+@mixin reset-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin background-color($color: white, $amount: 0) {
+    background-color: $color;
+    li:nth-child(odd){ //Selecciona todos los elementos li que sean hijos impares
+        background-color: lighten($color , $amount);
+    }
+}
