@@ -5,7 +5,7 @@ import gulpSass from 'gulp-sass'
 //funcion src para acceder a la unicacion de los archivos
 //funcion dest para almacenar los archivos procesados
 //funcion watch para seguir escuchando cambios en el archivo
-import {src, dest, watch} from 'gulp'
+import {src, dest, watch, series} from 'gulp'
 
 
 const sass =  gulpSass(dartSass)
@@ -22,3 +22,12 @@ export function css (done){
 export const dev = () =>{
     watch('src/scss/app.scss', css)
 }
+
+export const js = (done) =>{
+
+    src('src/js/app.js')
+        .pipe(dest('build/js'))
+    done()
+}
+
+export default series(js, css, dev); //ahora se arrancaran las tareas en este orden 
