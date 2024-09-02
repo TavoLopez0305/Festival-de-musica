@@ -20,7 +20,8 @@ export function css (done){
 //funcion watch para que la ejecucion se mantenga
 
 export const dev = () =>{
-    watch('src/scss/app.scss', css)
+    watch('src/scss/**/*.scss', css)
+    watch('src/js/**/*.js', js)
 }
 
 export const js = (done) =>{
