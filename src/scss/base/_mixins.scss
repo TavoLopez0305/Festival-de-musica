@@ -25,3 +25,9 @@
     max-width: 120rem;
     margin: 0 auto;
 }
+// se le asigna despues del nombre de la variable un valor por defecto, en caso de que no se asigene valor en donde se requira el mixin
+@mixin grid($columnas: 1, $gap: 5rem) {//generamos una variable de sass para generar las columnas, esta variable sera extraida desde el documento festival
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}

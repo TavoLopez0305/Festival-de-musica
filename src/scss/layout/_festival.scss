@@ -5,9 +5,7 @@
     @include m.contenedor;
 
     @include m.tablet{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5rem;
+        @include m.grid(2, 2rem);//en donde sea asigando el mixin de grid y gap se le debe asignar el numero de columnas que ocupara
     }
 }
 .contenido-festival{
