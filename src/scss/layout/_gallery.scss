@@ -20,3 +20,53 @@
         object-fit: cover;
     }
 }
+.modal{
+    position: fixed;
+    background-color: rgba(v.$negro, 0.5); //el segundo valor es la opacidad 
+    inset: 0; //con este colocamos el div en toda la pantalla
+
+    display: grid;
+    place-items: center; //centrar vertical y horizontalmente
+
+    animation: fadeIn ease-in 0.5s;
+
+    &fade-Out{
+        animation: fadeOut 0.5s ease-in;
+    }
+
+    //style para img despues de ejecutarse la funcion onclick
+    img{
+        max-width: 60rem;
+    }
+    .boton_cierre{
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: none;
+        background-color: v.$blanco;
+        color: v.$negro ;
+        text-align: center;
+
+        &:hover{
+            background-color: v.$negro ;
+            color:v.$blanco ;
+        }
+    }
+    
+}
+@keyframes fadeIn{ //sirve para definir una linea del tiempo
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{ //sirve para definir una linea del tiempo
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
