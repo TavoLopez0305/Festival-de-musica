@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     navegacionfija()
     resaltarEnlace()
+    redictionNav()
     crearGallery()
 })
 const navegacionfija = () =>{
@@ -107,6 +108,22 @@ const resaltarEnlace = () =>{
         })
     } )
  }
+
+const redictionNav = () =>{
+    const navlinks = document.querySelectorAll('navegacion-principal a')
+
+    navlinks.forEach(link =>{
+        link.addEventListener('click', e =>{
+            e.preventDefault() //eliminamos el evento por default
+         //   e.target.getAttribute('href') //solitamos la informacion href del la etiqueta link 
+            const sectionScroll = e.target.getAttribute('href')
+            const section = document.querySelector(sectionScroll) // almacenamos el selector que tenga el id igual al que se extrajo del href al hacer el evento click
+            
+            section.scrollIntoView({ block: "center", behavior: "smooth" })
+        })
+    }
+    )
+}
 
 
 
