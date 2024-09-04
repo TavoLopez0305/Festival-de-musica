@@ -1,7 +1,21 @@
 document.addEventListener('DOMContentLoaded', function(){
+    navegacionfija()
+    resaltarEnlace()
     crearGallery()
 })
+const navegacionfija = () =>{
+    const header = document.querySelector('.header')
+    const SobreFestival = document.querySelector('.sobre-festival')
+    //window como objeto global
+    window.addEventListener('scroll', function(){
+        if(SobreFestival.getBoundingClientRect().bottom < 1){
+            header.classList.add('fixed')
+        }else{
+            header.classList.remove('fixed')
+        }
+    })
 
+}
 const crearGallery = () =>{
 
         const gallery = document.querySelector('.gallery-imagenes')
@@ -68,3 +82,31 @@ const cerrarImagen = () =>{
 
 
 }
+
+const resaltarEnlace = () =>{
+    document.addEventListener('scroll', () =>{   // El código dentro de esta función se ejecuta cada vez que el usuario se desplaza (scrollea)
+        const sections = document.querySelectorAll('section')
+        const navLinks = document.querySelectorAll('.navegacion-principal a')
+        let actual = ""
+        
+        sections.forEach(section =>{
+
+            const sectionTop = section.offsetTop // toma la distacia del elemento seleccionado con su elemento padre 
+            const  sectionHeight = section.clientHeight // toma el tamaño de altura que tienen cada uno de los elemementos 
+//window.scrollY indica la cantidad de píxeles que el contenido de la página se ha desplazado verticalmente.
+            if(window.scrollY >= (sectionTop - sectionHeight /3)){
+                actual = section.id
+
+            }
+            navLinks.forEach(link =>{
+                link.classList.remove('active')
+                if(link.getAttribute('href') === '#' + actual){
+                    link.classList.add('active')
+                }
+            })
+        })
+    } )
+ }
+
+
+
