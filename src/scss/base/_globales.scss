@@ -1,4 +1,6 @@
 @use 'variables' as v;
+@use '../base/mixins' as m;
+
 
 html {
     font-size: 62.5%;
@@ -20,6 +22,16 @@ body {
     &.overflow-hidden{
         overflow: hidden;
     }
+    @include m.telefono{
+
+        & .revert_phone{
+            display: flex;
+            flex-direction: column-reverse;
+
+        }
+
+    }
+
 }
 p {
     color: v.$negro;

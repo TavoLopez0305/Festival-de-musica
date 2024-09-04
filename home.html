@@ -12,29 +12,31 @@
     <link rel="stylesheet" href="../build/css/app.css">
 </head>
 <body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <h1>Perreo Fest</h1>
+    <div class="revert_phone">
+        <header class="header">
+            <div class="contenedor contenido-header">
+                <h1>Perreo Fest</h1>
 
-            <nav class="navegacion-principal">
-                <a href="#lineup">Lineup</a>
-                <a href="#gallery">Galeria</a>
-                <a href="#boletos">Boletos</a>
-            </nav>
-        </div>
-    </header>
-    <div class="video">
-        <div class="overlay">
-            <div class="contenedor contenido-video">
-                <h2>Perreo Fest</h2>
-                <p>Octubre 2025, CDMX, México </p>
+                <nav class="navegacion-principal">
+                    <a href="#lineup">Lineup</a>
+                    <a href="#gallery">Galeria</a>
+                    <a href="#boletos">Boletos</a>
+                </nav>
             </div>
+        </header>
+        <div class="video">
+            <div class="overlay">
+                <div class="contenedor contenido-video">
+                    <h2>Perreo Fest</h2>
+                    <p>Octubre 2025, CDMX, México </p>
+                </div>
+            </div>
+            <video autoplay muted loop> <!-- Se le agregan esas funcionales para que el video se reproduzca y se repita automaticamente -->
+                <source src="../src/video/dj.mp4" type="video/mp4"/>
+                <source src="../src/video/dj.ogv" type="video/ogg"/>
+                <source src="../src/video/dj.webm" type="video/webm"/>
+            </video>
         </div>
-        <video autoplay muted loop> <!-- Se le agregan esas funcionales para que el video se reproduzca y se repita automaticamente -->
-            <source src="../src/video/dj.mp4" type="video/mp4"/>
-            <source src="../src/video/dj.ogv" type="video/ogg"/>
-            <source src="../src/video/dj.webm" type="video/webm"/>
-        </video>
     </div>
     <section class="sobre-festival">
         <div>
@@ -156,7 +158,7 @@
         <div class="gallery-imagenes">
         </div>
     </section>
-    <section id="boletos" class="contenedor-boletos">
+    <section id="boletos" class="contenedor-boletos" >
         <h3>Boletos</h3>
     
         <div class="boletos">
