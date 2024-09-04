@@ -2,7 +2,11 @@
 @use '../base/mixins' as m;
 
 .contenedor-boletos{
-    background-color:v.$verde;
+    /*background-color:v.$verde; */
+    background-image: url('../../img/background/9eba01ec-31b5-410a-9750-12ca1c919846.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
     h3{
         color: v.$blanco;
     }
