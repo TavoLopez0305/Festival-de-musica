@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function(){
     resaltarEnlace()
     redictionNav()
     crearGallery()
+    navenVideo()
+    cerrarImagen()
 })
 const navegacionfija = () =>{
     const header = document.querySelector('.header')
@@ -19,7 +21,7 @@ const navegacionfija = () =>{
 }
 const crearGallery = () =>{
 
-        const gallery = document.querySelector('.gallery-imagenes')
+        const gallery = document.querySelector('.Galeria-imagenes')
         const Cantidad_img = 16
 
         for (let i = 1; i <= Cantidad_img; i++) {
@@ -46,11 +48,11 @@ const mostrarImagen = (i) =>{
     const botonCierre = document.createElement('BUTTON')
     botonCierre.textContent =  'X'
     botonCierre.classList.add('boton_cierre')
-    botonCierre.onclick = cerrarImagen
+    botonCierre.click = cerrarImagen;
 
     const modal = document.createElement('DIV') // creamos el elemento 
     modal.classList.add('modal')
-    modal.onclick = cerrarImagen
+    modal.onclick = cerrarImagen;
 
     //insertamos la imagen dentro del contenedor modal
     modal.appendChild(imagen)
@@ -68,8 +70,7 @@ const mostrarImagen = (i) =>{
 const cerrarImagen = () =>{
     const modal = document.querySelector('.modal')
     modal.classList.add('fade-Out')
-
-
+    modal.classList.remove('overflow-hidden')
 
     setTimeout(()=>{ //generar un retrazo para que entre la transicion en css
         modal?.remove() //esto quevale a hacer un if por ejemplo (pregunta por la exitencia de la clase)
@@ -119,11 +120,44 @@ const redictionNav = () =>{
             const sectionScroll = e.target.getAttribute('href')
             const section = document.querySelector(sectionScroll) // almacenamos el selector que tenga el id igual al que se extrajo del href al hacer el evento click
             
-            section.scrollIntoView({ block: "center", behavior: "smooth" })
+            section.scrollIntoView({ block: "start", behavior: "smooth" })
         })
     }
     )
 }
 
+ const navenVideo = () =>{
+       let anchopantalla = window.innerWidth;
+       const pantallaCelular = 480
+       const video = document.querySelector('.video')
+       const href = ['Lineup', 'Galeria','Boletos']
+       const numeroLinks = href.length;
+       const href_foreach =[];
+       /**/
+       
+       if (anchopantalla === pantallaCelular || anchopantalla < pantallaCelular){
+            const header = document.querySelector('header')
+            header.remove()
+            const Navegador = document.createElement('NAV')
+            Navegador.classList.add('nav_Video')
+            video.appendChild(Navegador)
+                href.forEach( valor =>{
+                    href_foreach.push(valor);
+                })
+       }
+       const Nav = document.querySelector('.nav_Video')
+       for(let i = 0; i < numeroLinks;   i++ ) {
+           const referencia = document.createElement('A')
+           referencia.classList.add('new_link')
+           referencia.href = "#" + href_foreach[i] ;
+           referencia.textContent = href_foreach[i];
+           Nav.appendChild(referencia);          
+       }
+       
+
+
+
+
+ }
 
 
