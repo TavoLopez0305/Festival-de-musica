@@ -22,15 +22,7 @@ body {
     &.overflow-hidden{
         overflow: hidden;
     }
-    @include m.telefono{
 
-        & .revert_phone{
-            display: flex;
-            flex-direction: column-reverse;
-
-        }
-
-    }
 
 }
 p {

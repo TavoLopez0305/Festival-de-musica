@@ -1,7 +1,7 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-.gallery{
+.Galeria{
     @include m.contenedor;
     &-imagenes{
         @include m.grid(1,2rem);
@@ -22,7 +22,7 @@
 }
 .modal{
     position: fixed;
-    background-color: rgba(v.$negro, 0.5); //el segundo valor es la opacidad 
+    background-color: rgba(v.$negro, .96); //el segundo valor es la opacidad 
     inset: 0; //con este colocamos el div en toda la pantalla
 
     display: grid;
